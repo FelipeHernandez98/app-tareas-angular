@@ -22,7 +22,7 @@ export class TareasServices {
         },
       ];
 
-    deleteTreas(){
-        this.tareas.pop();
+    deleteTreas(nombreTarea: string ){
+        this.tareas = this.tareas.filter(tarea => tarea.nombre !== nombreTarea)
     }
 }

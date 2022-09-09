@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tarea } from '../interfaces/tarea';
 import { TareasServices } from '../services/tareas.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class ListadoTareasComponent {
     return this.tareasServices.tareas
   }
 
-  delete(){
-    this.tareasServices.deleteTreas();
+  delete(tarea: Tarea){
+    this.tareasServices.deleteTreas(tarea.nombre);
   }
 }
