@@ -11,12 +11,18 @@
       <tr *ngFor="let tarea of tareas; index as i">
         <th>{{ i + 1 }}</th>
         <td>
-          <b>
+          <b [ngClass]="tarea.completada? 'is-underlined' : '' ">
             {{ tarea.nombre }}
           </b>
         </td>
         <td>
-          <button class="button is-link">Completar</button>
+          <button 
+            [disabled]="tarea.completada" 
+            class="button is-link" 
+            (click)="completar(tarea)"
+          >
+            Completar
+          </button>
         </td>
         <td>
           <button class="button is-danger" (click)="delete(tarea)">Eliminar</button>
