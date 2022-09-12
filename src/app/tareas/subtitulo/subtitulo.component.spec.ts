@@ -1,16 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubtituloComponent } from './subtitulo.component';
+import { TareasServices } from '../services/tareas.service';
 
 describe('SubtituloComponent', () => {
   let component: SubtituloComponent;
   let fixture: ComponentFixture<SubtituloComponent>;
 
+  let service: TareasServices
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubtituloComponent ]
+      declarations: [ SubtituloComponent ],
+      providers: [TareasServices]
     })
     .compileComponents();
+
+    service = TestBed.inject(TareasServices)
   });
 
   beforeEach(() => {
@@ -19,7 +25,7 @@ describe('SubtituloComponent', () => {
     fixture.detectChanges();
   });
 
-  /* it('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
-  }); */
+  });
 });
