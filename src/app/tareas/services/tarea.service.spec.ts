@@ -21,4 +21,13 @@ describe('TraeaService', () => {
         service.deleteTreas("Cantar");
         expect(service.tareas.length).toBe(4);
     })
+
+    //Espias
+    it('Spy: Debe llamar la función completa 1 sola vez', ()=>{
+        const espia = jasmine.createSpyObj('TareasServices', ['completarTarea']);
+
+        espia.completarTarea();
+
+        expect(espia.completarTarea.calls.count()).toBe(1);
+    })
 })
